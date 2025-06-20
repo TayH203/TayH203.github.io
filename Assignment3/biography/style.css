@@ -34,5 +34,7 @@ ul {
   padding: 2em;
 }
 
-
+a:hover {
+    color: green;
+}
 
