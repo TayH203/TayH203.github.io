@@ -91,7 +91,7 @@ a:link, a:visited {
 
 a:focus, a:hover {
 	color: green;
-	text-docoration: underline;
+	text-decoration: underline;
 }
 
 a {
@@ -103,7 +103,7 @@ a[href^= "http"]{
 }
 
 ul, ol {
-	font-size 1.5em;
+	font-size: 1.5em;
 }
 
 li {
@@ -126,7 +126,7 @@ nav a: {
 
 nav ul li a {
 	font-family: 'montserratthin', sans-serif;
-	padding = 18px;
+	padding: 18px;
 	margin-top: 1em;
 	list-style-type: none;
 	line-height: 3.5em;
