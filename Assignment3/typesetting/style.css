@@ -42,4 +42,10 @@ header, footer {
   border-bottom: 5px solid #a66;
 }
 
-/* WRITE YOUR CODE BELOW HERE */
+header, h1, h2, h3, h4, h5, h6 {
+  font-family: 'super_shinyregular', super_shinyregular;
+}
+  
+body {
+  font-family: 'sparky_stonesregular', sparky_stoneregular;
+}
