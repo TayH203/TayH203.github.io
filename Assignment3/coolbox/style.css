@@ -15,5 +15,6 @@ div {
   text-shadow: 1px 1px 1px black;
   border-radius: 8px;
   border: 1px solid darkred;
-  
+  background-image: linear-gradient(to bottom right);
+  box-shadow: 4px 4px 4px;
 }
