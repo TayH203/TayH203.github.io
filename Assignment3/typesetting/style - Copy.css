@@ -50,7 +50,7 @@ footer {
 }
 
 header, section, aside, nav, footer {
-  padding: 1.25rem;
+  padding: 20px;
 }
 
 /* header and footer */
@@ -65,76 +65,15 @@ header, footer {
 html {
     font-family: montserratthin, serif;
 	font-size: 10px;
-	line-height: 1em;
-	font-size: 1.3em;
-	letter-spacing: 0.4em;
+	line-height: 2em;
+	font-size: 1em;
+	letter-spacing: 1em;
+	
 }
 
 h1, h2 {
 	font-family: caprasimoregular, sans-serif;
-	font-size: 1.75em;
-	letter-spacing: 0.5em;
-	line-height: 1em;
-}
-
-h1 {
 	text-align: center;
+	font-size: 2em;
+	letter-spacing: 1em;
 }
-
-h2 + p {
-	text-indent: 20px;
-}
-
-a:link, a:visited {
-    color: orange;
-}	
-
-a:focus, a:hover {
-	color: green;
-	text-docoration: underline;
-}
-
-a {
-	outline: none;
-}
-
-a[href^= "http"]{
-	background: url('external-link-52.png');
-}
-
-ul, ol {
-	font-size 1.5em;
-}
-
-li {
-	line-height: 1.5em;
-	list-style-type: square;
-}
-
-nav {
-	padding-left:0;
-}
-
-nav ul {
-	padding: 0;
-}
-
-nav a: {
-	text-decoration: none;
-	outline: none;
-}
-
-nav ul li a {
-	font-family: 'montserratthin', sans-serif;
-	padding = 18px;
-	margin-top: 1em;
-	list-style-type: none;
-	line-height: 3.5em;
-	width:100%;
-	border: 1px solid orange;
-	border-radius: 2.5px;
-	display: inline-block;
-	gap: 1.5rem;
-	text-align: center;
-}
-
