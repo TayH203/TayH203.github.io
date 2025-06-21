@@ -1,8 +1,26 @@
 /* General setup */
 
+@font-face {
+    font-family: 'sparky_stonesregular';
+    src: url('sparkystonesregular-bw6ld-webfont.woff2') format('woff2'),
+         url('sparkystonesregular-bw6ld-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'super_shinyregular';
+    src: url('supershiny-0v0rg-webfont.woff2') format('woff2'),
+         url('supershiny-0v0rg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
+
+html{font-size: 10px}
 
 body {
   margin: 0 auto;
@@ -25,7 +43,19 @@ aside {
 nav {
   float: left;
   width: 20%;
+  padding-left:0;
 }
+
+nav a {
+  text-decoration: none;
+  outline: none;
+}
+
+nav ul {
+ padding 0;
+}
+
+nav ul li
 
 footer {
   clear: both;
@@ -42,10 +72,46 @@ header, footer {
   border-bottom: 5px solid #a66;
 }
 
-header, h1, h2, h3, h4, h5, h6 {
-  font-family: 'super_shinyregular', super_shinyregular;
+header h1 {
+  font-size: 4em;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-family: 'super_shinyregular', sans-serif;
+} 
+
+section h2 {
+  font-size: 3em;
+  letter-spacing: 0.1em;
+  font-family: 'super_shinyregular', sans-serif;
+  font-weight: bold;
 }
+
+aside h2{
+  font-family: 'super_shinyregular', sans-serif;
+  font-size: 3em;
+
+section p {
+  font-size: 2em;
+  font-family: 'sparky_stonesregular', serifs;
+}
+
+section > p{
+  text-indent: 1em;
+
+footer p {
+  font-size: 1.5em;
+ 
+ul, ol, aside p {
+	font-size: 1.5em;
+}
+
+li {
+  line-height: 1.5 em;
+  list-style-type: square;
+}
+ 
+
+
+ 
   
-body {
-  font-family: 'sparky_stonesregular', sparky_stoneregular;
-}
+
