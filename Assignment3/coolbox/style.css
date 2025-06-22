@@ -2,9 +2,7 @@ html {
   font-family: sans-serif;
 }
 
-<<<<<<< HEAD
 /* Your CSS below here */
-=======
 div {
   width: 200px;
   height: 140px;
@@ -27,4 +25,3 @@ div {
 			  inset -3px -3px 3px rgb(0, 0, 0, 0.5);
   display: flex;
 }
->>>>>>> f8a72189be7d65e271f483552b0645eaeb78303a
