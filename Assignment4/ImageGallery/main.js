@@ -13,7 +13,6 @@ const pictures = [
 	'images/pic5.jpg'
 ];
 
-
 /* Declaring the alternative text for each image file */
 const altTexts = 
 {
@@ -25,11 +24,11 @@ const altTexts =
 };
 
 /* Looping through images */
-for (let i = 0; i <= pictures.length; i++) 
+for (let i = 0; i < pictures.length; i++) 
 {
 	const newImage = document.createElement('img');
-	newImage.setAttribute('src', picture[i]);
-	newImage.setAttribute('alt', altPicture[i]);		
+	newImage.setAttribute('src', pictures[i]);
+	newImage.setAttribute('alt', altTexts[i]);		
 	thumbBar.appendChild(newImage); 
 	
 	newImage.addEventListener('click', () => 
