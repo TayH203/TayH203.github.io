@@ -110,44 +110,6 @@ class EvilCircle extends Shape {
 		ctx.stroke();
 	}
 
-	checkBounds() {
-		if (this.x + this.size > width) {
-			this.x = width - this.size;
-		}
-		
-		if (this.x - this.size < 0) {
-			this.x = this.size;
-		}
-		
-		if (this.y + this.size > height) {
-			this.y = height - this.size;
-		}
-		
-		if (this.y - this.size < 0) {
-			this.y = this.size;
-		}
-	}	
-
-	collisionDetect() {
-		for (const ball of balls) {
-			if (ball.exists) {
-				const dx = this.x - ball.x;
-				const dy = this.y - ball.y;
-				const distance = Math.sqrt(dx * dx + dy * dy);
-							
-				if (distance < this.size + ball.size) {
-					ball.exists = false;
-					count--;
-					ballCountDisplay.textContent = `Ball Count: ${count}`;
-				}
-			}
-		}
-	}
-}
-
-<<<<<<< Updated upstream
-		
-=======
 checkBounds() {
 	if (this.x + this.size > width) {
 		this.x = width - this.size;
@@ -181,7 +143,6 @@ collisionDetect() {
 	}
 }
 
->>>>>>> Stashed changes
 const balls = [];
 let count = 0;
 
@@ -201,14 +162,11 @@ while (balls.length < 25) {
 	balls.push(ball);
 	count++;
 }
-	
-ballCountDisplay.textContent = `Ball Count: ${count}`;
 
 function loop() {
 	ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
 	ctx.fillRect(0, 0, width, height);
 
-<<<<<<< Updated upstream
 	for (const ball of balls) {
 		if (ball.exists) {
 			ball.draw();
@@ -216,23 +174,10 @@ function loop() {
 			ball.collisionDetect();
 		}
 	}
-	  
+  
 	evil.draw();
 	evil.checkBounds();
 	evil.collisionDetect();
-=======
-  for (const ball of balls) {
-	if (ball.exists) {
-		ball.draw();
-		ball.update();
-		ball.collisionDetect();
-	}
-  }
-  
-  evil.draw();
-  evil.checkBounds();
-  evil.collisionDetect();
->>>>>>> Stashed changes
 
 	requestAnimationFrame(loop);
 }
