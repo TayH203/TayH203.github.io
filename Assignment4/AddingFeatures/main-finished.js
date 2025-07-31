@@ -44,19 +44,19 @@ class Ball extends Shape {
 
   update() {
     if (this.x + this.size >= width) {
-      this.velX = -Math.abs(this.velX);
+      this.velX = -this.velX;
     }
 
     if (this.x - this.size <= 0) {
-      this.velX = Math.abs(this.velX);
+      this.velX = -this.velX;
     }
 
     if (this.y + this.size >= height) {
-      this.velY = -Math.abs(this.velY);
+      this.velY = -this.velY;
     }
 
     if (this.y - this.size <= 0) {
-      this.velY = Math.abs(this.velY);
+      this.velY = -this.velY;
     }
 
     this.x += this.velX;
@@ -65,7 +65,7 @@ class Ball extends Shape {
 
   collisionDetect() {
     for (const ball of balls) {
-      if (!(this === ball) && ball.exists) {
+      if (this !== ball && ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -78,10 +78,10 @@ class Ball extends Shape {
   }
 }
 
-class EvilCircle() extends Shape {
+class EvilCircle extends Shape {
 	constructor(x, y) {
 		super(x, y, 20, 20);
-		this.color = 'white';
+		this.color = "white";
 		this.size = 10;
 	
 		window.addEventListener("keydown", (e) => {
@@ -96,67 +96,97 @@ class EvilCircle() extends Shape {
 					this.y -= this.velY;
 					break;
 				case "s":
-				this.y += this.velY;
-				break;
+					this.y += this.velY;
+					break;
 			}
 		});
 	}
 
-draw() {
-	ctx.beginPath();
-	ctx.strokeStyle = this.color;
-	ctx.lineWidth = 3;
-	ctx.arc(this.x, this.y, this.size, 0, 2* Math.PI);
-	ctx.stroke();
+	draw() {
+		ctx.beginPath();
+		ctx.strokeStyle = this.color;
+		ctx.lineWidth = 3;
+		ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+		ctx.stroke();
+	}
+
+	checkBounds() {
+		if (this.x + this.size > width) {
+			this.x = width - this.size;
+		}
+		
+		if (this.x - this.size < 0) {
+			this.x = this.size;
+		}
+		
+		if (this.y + this.size > height) {
+			this.y = height - this.size;
+		}
+		
+		if (this.y - this.size < 0) {
+			this.y = this.size;
+		}
+	}	
+
+	collisionDetect() {
+		for (const ball of balls) {
+			if (ball.exists) {
+				const dx = this.x - ball.x;
+				const dy = this.y - ball.y;
+				const distance = Math.sqrt(dx * dx + dy * dy);
+							
+				if (distance < this.size + ball.size) {
+					ball.exists = false;
+					count--;
+					ballCountDisplay.textContent = `Ball Count: ${count}`;
+				}
+			}
+		}
+	}
 }
 
-checkBounds() {
-	if (this.x + this.size > canvas.width) {
-		this.x = canvas.width - this.size;
-	}
-	
-	if (this.x - this.size < 0) {
-		this.x = this.size;
-	}
-	
-	if (this.y + this.size > canvas.height) {
-		this.y = canvas.height - this.size;
-	}
-	
-	if (this.y - this.size < 0) {
-		this.y = this.size;
-	}
-}	
-
+		
 const balls = [];
+let count = 0;
 
 while (balls.length < 25) {
-  const size = random(10, 20);
-  const ball = new Ball(
-    // ball position always drawn at least one ball width
-    // away from the edge of the canvas, to avoid drawing errors
-    random(0 + size, width - size),
-    random(0 + size, height - size),
-    random(-7, 7),
-    random(-7, 7),
-    randomRGB(),
-    size
-  );
+	const size = random(10, 20);
+	const ball = new Ball(
+		// ball position always drawn at least one ball width
+		// away from the edge of the canvas, to avoid drawing errors
+		random(0 + size, width - size),
+		random(0 + size, height - size),
+		random(-7, 7),
+		random(-7, 7),
+		randomRGB(),
+		size
+	);
 
-  balls.push(ball);
+	balls.push(ball);
+	count++;
 }
+	
+ballCountDisplay.textContent = `Ball Count: ${count}`;
 
 function loop() {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
-  ctx.fillRect(0, 0, width, height);
+	ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+	ctx.fillRect(0, 0, width, height);
 
-  for (const ball of balls) {
-    ball.draw();
-    ball.update();
-    ball.collisionDetect();
-  }
+	for (const ball of balls) {
+		if (ball.exists) {
+			ball.draw();
+			ball.update();
+			ball.collisionDetect();
+		}
+	}
+	  
+	evil.draw();
+	evil.checkBounds();
+	evil.collisionDetect();
 
-  requestAnimationFrame(loop);
+	requestAnimationFrame(loop);
 }
 
 loop();
+
+
