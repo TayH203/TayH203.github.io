@@ -25,7 +25,7 @@ Purpose: Troubleshooting Web Accessibility
       <font size="7">Welcome to our wildlife website</font>
     </div>
 
-    <div class="nav">
+    <nav>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Our team</a></li>
@@ -37,7 +37,7 @@ Purpose: Troubleshooting Web Accessibility
         <input type="search" name="q" placeholder="Search query">
         <input type="submit" value="Go!">
       </form>
-    </div>
+    </nav>
 
     <main>
       <article>
@@ -107,7 +107,7 @@ Purpose: Troubleshooting Web Accessibility
 			from farms or country houses. They tend to live in relative isolation, in caves, tents, or cottages.
 		</p>
     
-        <img src="media/wild-bear.jpg">
+        <img src="media/wild-bear.jpg" alt="Grizzly Bear in a river">
         
 		<p>
 			Urban (gentrified) bears on the other hand have largely abandoned the old ways. They will hunt other urban creatures if 
@@ -116,7 +116,7 @@ Purpose: Troubleshooting Web Accessibility
 			kitchens and steal essentials like baked beans, ready meals, and microwave ovens.
 		</p>
        
-        <img src="media/urban-bear.jpg">
+        <img src="media/urban-bear.jpg" alt="Bear at a Zoo">
        
 		
         <p>Urban bears will sleep anywhere they can, from bus shelters and parks, to the toilets in McDonalds, to their own apartment.</p>
@@ -139,6 +139,9 @@ Purpose: Troubleshooting Web Accessibility
           <source src="media/bear.ogg" type="audio/ogg">
           <p>It looks like your browser doesn't support HTML5 audio players.</p>
         </audio>
+		
+		<p><strong>Transcript:</strong> The sound of a Grizzily Bear.</p>
+		<p> For audio thats not playing, <a href="bear-growl.mp3" download>click for MP3 file</a>.</p>
 
         <aside>
 
@@ -163,14 +166,14 @@ Purpose: Troubleshooting Web Accessibility
             <form class="comment-form">
               <div class="flex-pair">
                 Your name:
-                <input type="text" name="name" id="name" placeholder="Enter your name">
+                <input type="text" name="name" id="name" placeholder="Enter your name" aria-label="site">
               </div>
               <div class="flex-pair">
                 Your comment:
-                <input type="text" name="comment" id="comment" placeholder="Enter your comment">
+                <input type="text" name="comment" id="comment" placeholder="Enter your comment" aria-label="site">
               </div>
               <div>
-                <input type="submit" value="Submit comment">
+                <input type="submit" value="Submit comment" aria-label="site">
               </div>
             </form>
 
