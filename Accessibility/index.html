@@ -22,7 +22,7 @@ Purpose: Troubleshooting Web Accessibility
 
   <body>
     <div class="header">
-      <font size="7">Welcome to our wildlife website</font>
+      <h1>Welcome to our wildlife website</h1>
     </div>
 
     <nav>
@@ -41,7 +41,7 @@ Purpose: Troubleshooting Web Accessibility
 
     <main>
       <article>
-        <h1>The trouble with Bears</h1>
+        <h2>The trouble with Bears</h2>
       
         <p>By Evan Wild</p>
   
@@ -69,19 +69,20 @@ Purpose: Troubleshooting Web Accessibility
 		</p>
   
         <table>
+		  <caption>Comparing Wild Bears to Urban Bears</caption>
           <thead>
             <tr>
-              <td>Bear Type</td>
-              <td>Coat</td>
-              <td>Adult size</td>
-              <td>Habitat</td>
-              <td>Lifespan</td>
-              <td>Diet</td>
+              <th scope="col">Bear Type</th>
+              <th scope="col">Coat</th>
+              <th scope="col">Adult size</th>
+              <th scope="col">Habitat</th>
+              <th scope="col">Lifespan</th>
+              <th scope="col">Diet</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Wild</td>
+              <th scope="row">Wild</th>
               <td>Brown or black</td>
               <td>1.4 to 2.8 meters</td>
               <td>Woods and forests</td>
@@ -89,7 +90,7 @@ Purpose: Troubleshooting Web Accessibility
               <td>Fish, meat, plants</td>
             </tr>
             <tr>
-              <td>Urban</td>
+              <th scope="row">Urban</th>
               <td>North Face</td>
               <td>18 to 22</td>
               <td>Condos and coffee shops</td>
@@ -140,8 +141,12 @@ Purpose: Troubleshooting Web Accessibility
           <p>It looks like your browser doesn't support HTML5 audio players.</p>
         </audio>
 		
-		<p><strong>Transcript:</strong> The sound of a Grizzily Bear.</p>
-		<p> For audio thats not playing, <a href="bear-growl.mp3" download>click for MP3 file</a>.</p>
+		<p><strong>Transcript:</strong>
+			This isn't really an audio fact file about bears, 
+			but it is an audio file that you can transcribe.
+		</p>
+		
+		<p> For audio thats not playing, <a href="media/bear.mp3" download>click for MP3 file</a>.</p>
 
         <aside>
 
@@ -157,27 +162,27 @@ Purpose: Troubleshooting Web Accessibility
 
         </aside>
         <section class="comments">
-          <div class="show-hide">Show comments</div>
+		  <div class="show-hide">Show comments</div>
 
           <div class="comment-wrapper">
 
-            <h3>Add comment</h3>
+            <h2>Add comment</h2>
 
             <form class="comment-form">
               <div class="flex-pair">
-                Your name:
-                <input type="text" name="name" id="name" placeholder="Enter your name" aria-label="site">
+                <label for="name">name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" aria-label="Your name">
               </div>
               <div class="flex-pair">
-                Your comment:
-                <input type="text" name="comment" id="comment" placeholder="Enter your comment" aria-label="site">
+                <label for="comment">Your comment:</label>
+                <input type="text" name="comment" id="comment" placeholder="Enter your comment" aria-label="Your comment">
               </div>
               <div>
-                <input type="submit" value="Submit comment" aria-label="site">
+                <input type="submit" value="Submit comment" aria-label="Submit comment">
               </div>
             </form>
 
-            <h3>Comments</h3>
+            <h2>Comments</h2>
 
             <ul class="comment-container">
 
@@ -200,7 +205,7 @@ Purpose: Troubleshooting Web Accessibility
       </article>
 
       <div class="secondary">
-        <h1>Related</h1>
+        <h2>Related</h2>
 
         <ul>
           <li><a href="#">The trouble with Bees</a></li>
